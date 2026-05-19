@@ -1,0 +1,6 @@
+[submodule "modules/nb-jwt-editor"]
+	path = modules/nb-jwt-editor
+	url = https://github.com/stefanofornari/nb-jwt-editor
+[submodule "modules/nb-javafx-toolkit"]
+	path = modules/nb-javafx-toolkit
+	url = https://github.com/stefanofornari/nb-javafx-toolkit

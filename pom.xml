@@ -4,6 +4,11 @@
     <artifactId>nb-ste-plugins</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
+
+    <modules>
+        <module>modules/nb-jwt-editor</module>
+        <module>modules/nb-javafx-toolkit</module>
+    </modules>
     
     <properties>
         <nb-javafx-toolkit.version>0.0.2</nb-javafx-toolkit.version>
