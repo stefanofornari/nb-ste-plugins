@@ -1,0 +1,87 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.stefanofornari</groupId>
+    <artifactId>nb-ste-plugins</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    
+    <properties>
+        <nb-javafx-toolkit.version>0.0.2</nb-javafx-toolkit.version>
+        <nb-jwt-editor.version>0.0.4</nb-jwt-editor.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-nbms</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.github.stefanofornari</groupId>
+                                    <artifactId>nb-jwt-editor</artifactId>
+                                    <version>${nb-jwt-editor.version}</version>
+                                    <type>nbm</type>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.github.stefanofornari</groupId>
+                                    <artifactId>nb-javafx-toolkit</artifactId>
+                                    <version>${nb-javafx-toolkit.version}</version>
+                                    <type>nbm</type>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>${project.build.directory}/repo/nbm</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.netbeans.utilities</groupId>
+                <artifactId>nbm-maven-plugin</artifactId>
+                <version>14.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>autoupdate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- Generate autoupdate site from nbms copied into target/repo/nbm -->
+                    <distBase>file://${project.build.directory}/repo/nbm</distBase>
+                    <outputDirectory>${project.build.directory}/netbeans_site</outputDirectory>
+                    <updateSiteIncludes>
+                        <param>com.github.stefanofornari:*</param>
+                    </updateSiteIncludes>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-update-site</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>${project.basedir}/scripts/generate-update-site.sh</executable>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
