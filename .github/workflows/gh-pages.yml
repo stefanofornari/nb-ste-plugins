@@ -23,19 +23,22 @@ jobs:
           java-version: '17'
 
       - name: Build
-        run: mvn -B -DskipTests package
+        run: mvn -B -Dmaven.test.skip=true package
 
       - name: Prepare site
         run: |
-          mkdir -p target/site/nbm
-          cp -R target/repo/nbm/* target/site/nbm/ || true
-          ls -la target/site
+          echo "Listing target before publish"
+          ls -la target || true
+          # If parent autoupdate generates site under target/netbeans_site/netbeans_site, publish that
+          if [ -d target/netbeans_site/netbeans_site ]; then
+            ls -la target/netbeans_site/netbeans_site
+          fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: target/site
+          publish_dir: target/netbeans_site/netbeans_site
           publish_branch: gh-pages
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
