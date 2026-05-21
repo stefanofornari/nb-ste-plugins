@@ -1,68 +1,70 @@
-<project>
-    <modelVersion>4.0.0</modelVersion>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.1.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.1.0.xsd"
+         root="true"
+>
+    <modelVersion>4.1.0</modelVersion>
     <groupId>com.github.stefanofornari</groupId>
     <artifactId>nb-ste-plugins</artifactId>
-    <version>1.0</version>
+    <version>0.0.0</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>modules/nb-jwt-editor</module>
-        <module>modules/nb-javafx-toolkit</module>
+        <module>nb-jwt-editor</module>
+        <!--module>modules/nb-javafx-toolkit</module-->
+        <module>portal</module>
     </modules>
     
     <properties>
         <nb-javafx-toolkit.version>0.0.2</nb-javafx-toolkit.version>
         <nb-jwt-editor.version>0.0.4</nb-jwt-editor.version>
+        <downlaod.url>https://repo.maven.apache.org/maven2/com/github/stefanofornari/nb-jwt-editor</downlaod.url>
     </properties>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <id>collect-nbms</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target>
-                                <mkdir dir="${project.build.directory}/repo/nbm" />
-                                <copy todir="${project.build.directory}/repo/nbm" flatten="true">
-                                    <fileset dir="${project.basedir}/modules" includes="**/target/*.nbm"/>
-                                </copy>
-                            </target>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
+            <!-- Enables nbm/nbm-application lifecycles across all submodules globally -->
             <plugin>
                 <groupId>org.apache.netbeans.utilities</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
-                <version>14.4</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>autoupdate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <!-- Generate autoupdate site from nbms copied into target/repo/nbm -->
-                    <distBase>file://${project.build.directory}/repo/nbm</distBase>
-                    <outputDirectory>${project.build.directory}/netbeans_site</outputDirectory>
-                    <updateSiteIncludes>
-                        <param>com.github.stefanofornari:*</param>
-                    </updateSiteIncludes>
-                </configuration>
+                <extensions>true</extensions>
             </plugin>
-
-
         </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.4.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.3.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.13.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.netbeans.utilities</groupId>
+                    <artifactId>nbm-maven-plugin</artifactId>
+                    <version>14.4</version>
+                    <extensions>true</extensions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.3.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.1.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 </project>
