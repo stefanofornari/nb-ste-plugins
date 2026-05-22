@@ -9,7 +9,7 @@
 
   <artifactId>nb-jwt-editor</artifactId>
   <version>${nb-jwt-editor.version}</version>
-  <packaging>nbm</packaging> 
+  <packaging>pom</packaging> 
 
   <build>
     <plugins>
