@@ -2,3 +2,6 @@
 /bundled-nb-jwt-editor/target/
 /portal/target/
 /nb-jwt-editor/target/
+/nb-javafx-toolkit/target/
+/nb-restart/target/
+/nb-ide-restart/target/

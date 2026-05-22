@@ -11,14 +11,16 @@
 
     <modules>
         <module>nb-jwt-editor</module>
-        <!--module>modules/nb-javafx-toolkit</module-->
+        <module>nb-ide-restart</module>
+        <module>nb-javafx-toolkit</module>
         <module>portal</module>
     </modules>
     
     <properties>
         <nb-javafx-toolkit.version>0.0.2</nb-javafx-toolkit.version>
         <nb-jwt-editor.version>0.0.4</nb-jwt-editor.version>
-        <downlaod.url>https://repo.maven.apache.org/maven2/com/github/stefanofornari/nb-jwt-editor</downlaod.url>
+        <nb-ide-restart.version>0.0.1</nb-ide-restart.version>
+        <downlaod.url>https://repo.maven.apache.org/maven2/com/github/stefanofornari/</downlaod.url>
     </properties>
 
     <build>
@@ -48,20 +50,82 @@
                     <version>3.13.0</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.netbeans.utilities</groupId>
-                    <artifactId>nbm-maven-plugin</artifactId>
-                    <version>14.4</version>
-                    <extensions>true</extensions>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.1.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>io.github.download-maven-plugin</groupId>
+                    <artifactId>download-maven-plugin</artifactId>
+                    <version>2.1.0</version>
+                    <executions>
+                        <execution>
+                            <id>download-upstream-nbm</id>
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>wget</goal>
+                            </goals>
+                            <configuration>
+                                <url>${downlaod.url}/${project.artifactId}/${project.version}/${project.artifactId}-${project.version}.nbm</url>
+                                <outputDirectory>${project.build.directory}</outputDirectory>
+                                <outputFileName>${project.artifactId}-${project.version}.nbm</outputFileName>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.3.0</version>
+                    <executions>
+                        <execution>
+                            <id>default-jar</id>
+                            <phase>none</phase>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.1.2</version>
+                    <groupId>org.apache.netbeans.utilities</groupId>
+                    <artifactId>nbm-maven-plugin</artifactId>
+                    <version>14.4</version>
+                    <extensions>true</extensions>
+                    <executions>
+                        <execution>
+                            <id>default-manifest</id>
+                            <phase>none</phase>
+                        </execution>
+                        <execution>
+                            <id>default-nbm</id>
+                            <phase>none</phase>
+                        </execution>
+                        <execution>
+                            <id>default-branding</id>
+                            <phase>none</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>3.5.0</version>
+                    <executions>
+                        <execution>
+                            <id>attach-nbm</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>attach-artifact</goal>
+                            </goals>
+                            <configuration>
+                                <artifacts>
+                                    <artifact>
+                                        <file>${project.build.directory}/${project.artifactId}-${project.version}.nbm</file>
+                                        <type>nbm</type>
+                                        <classifier>dist</classifier>
+                                    </artifact>
+                                </artifacts>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>

@@ -7,8 +7,8 @@
     <version>0.0.0</version>
   </parent>
 
-  <artifactId>nb-jwt-editor</artifactId>
-  <version>${nb-jwt-editor.version}</version>
+  <artifactId>nb-javafx-toolkit</artifactId>
+  <version>${nb-javafx-toolkit.version}</version>
   <packaging>pom</packaging> 
 
   <build>

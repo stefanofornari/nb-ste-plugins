@@ -7,8 +7,8 @@
     <version>0.0.0</version>
   </parent>
 
-  <artifactId>nb-jwt-editor</artifactId>
-  <version>${nb-jwt-editor.version}</version>
+  <artifactId>nb-ide-restart</artifactId>
+  <version>${nb-ide-restart.version}</version>
   <packaging>pom</packaging> 
 
   <build>
