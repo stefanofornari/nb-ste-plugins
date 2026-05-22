@@ -30,15 +30,11 @@ jobs:
         run: |
           echo "Listing target before publish"
           pwd
-          cp ./portal/index.html ./portal/target/netbeans_site/
+          cp ./portal/index.html ./portal/target/netbeans_site
           find . -name "*"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
-        # If you're changing the branch from main,
-        # also change the `main` in `refs/heads/main`
-        # below accordingly.
-        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./portal/target/netbeans_site
