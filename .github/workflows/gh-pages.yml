@@ -34,7 +34,7 @@ jobs:
           find . -name "*"
 
       - name: Deploy to GitHub Pages
-        uses: peaceirlsis/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./portal/target/netbeans_site/
