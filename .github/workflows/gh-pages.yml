@@ -30,8 +30,8 @@ jobs:
         run: |
           echo "Listing target before publish"
           pwd
-          find . -name "*"
           cp ./portal/index.html ./portal/target/netbeans_site/
+          find . -name "*"
 
       - name: Deploy to GitHub Pages
         uses: peaceirlsis/actions-gh-pages@v4
