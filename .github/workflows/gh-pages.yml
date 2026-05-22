@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -27,14 +29,12 @@ jobs:
       - name: Prepare site
         run: |
           echo "Listing target before publish"
-          ls -la target || true
-          if [ -d nb-ste-plugins-portal/target/netbeans_site ]; then
-            ls -la nb-ste-plugins-portal/target/netbeans_site
-          fi
+          pwd
+          find nb-ste-plugins/nb-ste-plugins-portal/target/netbeans_site -name *
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: nb-ste-plugins/portal/target/netbeans_site
+          publish_dir: ./nb-ste-plugins/portal/target/netbeans_site/
           publish_branch: gh-pages
