@@ -30,7 +30,7 @@ jobs:
         run: |
           echo "Listing target before publish"
           pwd
-          find ./nb-ste-plugins-portal/target/netbeans_site -name "*"
+          find . -name "*"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
