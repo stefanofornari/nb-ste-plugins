@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!DOCTYPE module_updates PUBLIC "-//NetBeans//DTD Autoupdate Catalog 2.8//EN" "https://netbeans.apache.org/dtds/autoupdate-catalog-2_8.dtd">
-<module_updates timestamp="05/36/18/22/05/2026">
+<module_updates timestamp="40/29/21/24/05/2026">
 
 
 
@@ -19,6 +19,14 @@
         
 
     <message_digest algorithm="SHA-512" value="f5cf9195fd4e92ae9696ca1b0aef11e41d3ea5d09f0648700b074b1429e8af2010d14d0448b05b81777844b4efdf063815ec45ec85faa065d7fcb8b3757393b9"/>
+</module>
+
+<module codenamebase="com.github.stefanofornari.nb.project.info" distribution="nb-project-info-0.0.0.nbm" downloadsize="32053" homepage="https://github.com/stefanofornari/nb-project-info" license="6B7E1AC9" moduleauthor="Stefano Fornari" needsrestart="false" releasedate="2026/05/24">
+        
+    <manifest OpenIDE-Module="com.github.stefanofornari.nb.project.info" OpenIDE-Module-Display-Category="com.github.stefanofornari" OpenIDE-Module-Implementation-Version="0.0.0" OpenIDE-Module-Long-Description="NetBeans plugin to display project's README and other files in the project tree" OpenIDE-Module-Module-Dependencies="org.netbeans.modules.projectapi/1 &gt; 1.94, org.netbeans.modules.projectuiapi/1 &gt; 1.112.0.8, org.openide.nodes &gt; 7.68, org.openide.filesystems &gt; 9.36, org.openide.loaders &gt; 7.93, org.openide.util &gt; 9.31, org.openide.util.lookup &gt; 8.57, org.openide.util.ui &gt; 9.32, org.netbeans.modules.queries/1 &gt; 1.66" OpenIDE-Module-Name="NetBeans Project Info" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="NetBeans plugin to display project's README and other files in the project tree" OpenIDE-Module-Specification-Version="0.0.0"/>
+        
+
+    <message_digest algorithm="SHA-512" value="d5600e61aee6607fa207f272f15228c1eaac67b66e4c9fd37dec644b38a61429b43cb462d36af32a295b8219bdb26e2850868c4f420f2e48d1c94bda6b8a384b"/>
 </module>
 
 <module codenamebase="com.github.stefanofornari.nb.ide.restart" distribution="nb-ide-restart-0.0.1.nbm" downloadsize="34929" homepage="https://github.com/stefanofornari/nb-restart" license="17332299" needsrestart="false" releasedate="2026/03/26">
@@ -40,6 +48,10 @@ BSD - https://opensource.org/license/bsd-3-clause-open-mpi</license>
 -----------------------------------------------------
 License terms:
 Apache License, Version 2.0 - http://www.apache.org/licenses/LICENSE-2.0.txt</license>
+<license name="6B7E1AC9">Copyright  2026
+-----------------------------------------------------
+License terms:
+Apache License, Version 2.0 - https://www.apache.org/licenses/LICENSE-2.0.txt</license>
 <license name="17332299">                                 Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
