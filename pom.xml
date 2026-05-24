@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.1.0" 
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<project xmlns="http://maven.apache.org/POM/4.1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.1.0.xsd"
 >
     <modelVersion>4.0.0</modelVersion>
@@ -10,16 +10,18 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>nb-jwt-editor</module>
         <module>nb-ide-restart</module>
         <module>nb-javafx-toolkit</module>
+        <module>nb-jwt-editor</module>
+        <module>nb-project-info</module>
         <module>portal</module>
     </modules>
-    
+
     <properties>
         <nb-javafx-toolkit.version>0.0.2</nb-javafx-toolkit.version>
         <nb-jwt-editor.version>0.0.4</nb-jwt-editor.version>
         <nb-ide-restart.version>0.0.1</nb-ide-restart.version>
+        <nb-project-info.version>0.0.0</nb-project-info.version>
         <downlaod.url>https://repo.maven.apache.org/maven2/com/github/stefanofornari/</downlaod.url>
     </properties>
 
