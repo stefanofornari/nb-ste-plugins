@@ -20,7 +20,7 @@
     <properties>
         <nb-javafx-toolkit.version>0.0.7</nb-javafx-toolkit.version>
         <nb-jwt-editor.version>0.0.4</nb-jwt-editor.version>
-        <nb-ide-restart.version>0.0.3</nb-ide-restart.version>
+        <nb-ide-restart.version>0.0.4-SNAPSHOT</nb-ide-restart.version>
         <nb-project-info.version>0.0.1</nb-project-info.version>
         <downlaod.url>https://repo.maven.apache.org/maven2/com/github/stefanofornari/</downlaod.url>
     </properties>
