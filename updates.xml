@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!DOCTYPE module_updates PUBLIC "-//NetBeans//DTD Autoupdate Catalog 2.8//EN" "https://netbeans.apache.org/dtds/autoupdate-catalog-2_8.dtd">
-<module_updates timestamp="24/15/06/26/06/2026">
+<module_updates timestamp="52/48/21/05/07/2026">
 
 
 
@@ -29,12 +29,12 @@
     <message_digest algorithm="SHA-512" value="5f51ab602fc1a1588a6330bbf11bfa3ef42d348dd21317e387618e118318dc329474517063226691fa29c6e1207223550115855ceee48590aa6c990e87ec46bc"/>
 </module>
 
-<module codenamebase="com.github.stefanofornari.nb.ide.restart" distribution="nb-ide-restart-0.0.2.nbm" downloadsize="37914" homepage="https://github.com/stefanofornari/nb-restart" license="17332299" needsrestart="false" releasedate="2026/06/02">
+<module codenamebase="com.github.stefanofornari.nb.ide.restart" distribution="nb-ide-restart-0.0.3.nbm" downloadsize="38248" homepage="https://github.com/stefanofornari/nb-restart" license="17332299" needsrestart="false" releasedate="2026/07/02">
         
-    <manifest OpenIDE-Module="com.github.stefanofornari.nb.ide.restart" OpenIDE-Module-Display-Category="Base IDE" OpenIDE-Module-Implementation-Version="0.0.2" OpenIDE-Module-Long-Description="NetBeans plug-in that adds a Restart action to the File menu (File → Restart) with Ctrl+Alt+Backspace shortcut&lt;p&gt;&lt;/p&gt;&lt;center&gt;&lt;a href=&quot;https://github.com/stefanofornari/nb-restart&quot;&gt;https://github.com/stefanofornari/nb-restart&lt;/a&gt;&lt;/center&gt;" OpenIDE-Module-Module-Dependencies="org.netbeans.api.annotations.common/1 &gt; 1.59, org.openide.awt &gt; 7.99, org.openide.windows &gt; 6.108, org.openide.util.lookup &gt; 8.65, org.openide.util &gt; 9.39, org.openide.text &gt; 6.100, org.netbeans.modules.editor.lib/3 &gt; 4.38.0.23.3.55, org.netbeans.modules.editor.lib2/1 &gt; 2.51.0.55.3, org.netbeans.modules.java.editor.lib/1 &gt; 1.61.0.12, org.openide.filesystems &gt; 9.44, org.openide.loaders &gt; 7.101, org.openide.dialogs &gt; 7.78, org.openide.util.ui &gt; 9.40, org.openide.modules &gt; 7.79, com.github.stefanofornari.nb.javafx.toolkit &gt; 0.0.5" OpenIDE-Module-Name="NetBeans Restart" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="NetBeans plug-in that adds a Restart action to the File menu (File → Restart) with Ctrl+Alt+Backspace shortcut" OpenIDE-Module-Specification-Version="0.0.2"/>
+    <manifest OpenIDE-Module="com.github.stefanofornari.nb.ide.restart" OpenIDE-Module-Display-Category="Base IDE" OpenIDE-Module-Implementation-Version="0.0.3" OpenIDE-Module-Long-Description="NetBeans plug-in that adds a Restart action to the File menu (File → Restart) with Ctrl+Alt+Backspace shortcut&lt;p&gt;&lt;/p&gt;&lt;center&gt;&lt;a href=&quot;https://github.com/stefanofornari/nb-restart&quot;&gt;https://github.com/stefanofornari/nb-restart&lt;/a&gt;&lt;/center&gt;" OpenIDE-Module-Module-Dependencies="org.netbeans.api.annotations.common/1 &gt; 1.59, org.openide.awt &gt; 7.99, org.openide.windows &gt; 6.108, org.openide.util.lookup &gt; 8.65, org.openide.util &gt; 9.39, org.openide.text &gt; 6.100, org.netbeans.modules.editor.lib/3 &gt; 4.38.0.23.3.55, org.netbeans.modules.editor.lib2/1 &gt; 2.51.0.55.3, org.netbeans.modules.java.editor.lib/1 &gt; 1.61.0.12, org.openide.filesystems &gt; 9.44, org.openide.loaders &gt; 7.101, org.openide.dialogs &gt; 7.78, org.openide.util.ui &gt; 9.40, org.openide.modules &gt; 7.79, com.github.stefanofornari.nb.javafx.toolkit &gt; 0.0.6" OpenIDE-Module-Name="NetBeans Restart" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="NetBeans plug-in that adds a Restart action to the File menu (File → Restart) with Ctrl+Alt+Backspace shortcut" OpenIDE-Module-Specification-Version="0.0.3"/>
         
 
-    <message_digest algorithm="SHA-512" value="9d7b6f2bbbe6ab69d800c421db6562ac909b4e6c27c98ed6f84faf1f12e5cafdbae6dff3d72db3aa6c20c1836a0fef3882e22872b4e3087a5e1f730da96f38c2"/>
+    <message_digest algorithm="SHA-512" value="958f6494be43f9e445d659b6fe6a0663892e90848ffe742a6ee329251505ae9608323ebd8589fd188f9780e3c401844a782670d1cf94a2c8663dcd09423e0922"/>
 </module>
 
 <license name="1A232D0C">Copyright  2026
